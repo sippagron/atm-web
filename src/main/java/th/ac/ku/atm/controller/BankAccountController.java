@@ -21,7 +21,7 @@ public class BankAccountController {
 
     @GetMapping
     public String getBankAccountPage(Model model){
-//        model.addAttribute("allBankAccounts", bankAccountService.getBankAccount());
+        model.addAttribute("allBankAccounts", bankAccountService.getBankAccounts());
         return "bankaccount";
     }
     @PostMapping

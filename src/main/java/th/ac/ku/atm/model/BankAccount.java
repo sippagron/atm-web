@@ -1,9 +1,11 @@
 package th.ac.ku.atm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.lang.Nullable;
 
 public class BankAccount {
 
+    @Nullable
     private int id;
     private int customerId;
     private String type;

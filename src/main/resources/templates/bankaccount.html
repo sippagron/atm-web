@@ -42,7 +42,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="account : ${bankaccounts}">
+        <tr th:each="account : ${allBankAccounts}">
             <td th:text="${account.id}"></td>
             <td th:text="${account.customerId}"></td>
             <td th:text="${account.type}"></td>
@@ -51,4 +51,3 @@
         </tbody>
     </table>
 </div>
-
