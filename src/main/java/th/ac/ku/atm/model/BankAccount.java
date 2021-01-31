@@ -7,6 +7,7 @@ public class BankAccount {
 
     @Nullable
     private int id;
+    @Nullable
     private int customerId;
     private String type;
     private double balance;
