@@ -5,53 +5,62 @@ import org.springframework.lang.Nullable;
 
 public class BankAccount {
 
-    @Nullable
-    private int id;
-    @Nullable
-    private int customerId;
-    private String type;
-    private double balance;
+    @JsonIgnoreProperties(ignoreUnknown = true)
+        @Nullable
+        private int id;
+        @Nullable
+        private int customerId;
+        @Nullable
+        private String type;
+        @Nullable
+        private double balance;
 
-    @JsonIgnoreProperties (ignoreUnknown = true)
+        public BankAccount(int id, int customerId, String type, double balance) {
+            this.id = id;
+            this.customerId = customerId;
+            this.type = type;
+            this.balance = balance;
+        }
 
-    public BankAccount(int id, int customerId, String type, double balance) {
-        this.id = id;
-        this.customerId = customerId;
-        this.type = type;
-        this.balance = balance;
-    }
+        public int getId() {
+            return id;
+        }
 
-    public int getId() {
-        return id;
-    }
+        public int getCustomerId() {
+            return customerId;
+        }
 
-    public int getCustomerId() {
-        return customerId;
-    }
+        public String getType() {
+            return type;
+        }
 
-    public String getType() {
-        return type;
-    }
+        public double getBalance() {
+            return balance;
+        }
 
-    public double getBalance() {
-        return balance;
-    }
+        public void setId(int id) {
+            this.id = id;
+        }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+        public void setCustomerId(int customerId) {
+            this.customerId = customerId;
+        }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
+        public void setType(String type) {
+            this.type = type;
+        }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+        public void setBalance(double balance) {
+            this.balance = balance;
+        }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
+        public void deposit(double amount){
+            this.balance += amount;
+        }
+
+        public void withdraw(double amount){
+            this.balance -= amount;
+        }
 
     @Override
     public String toString() {
